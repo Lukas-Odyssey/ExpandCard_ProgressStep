@@ -1,0 +1,100 @@
+/* https://fonts.google.com/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.card-container {
+  display: flex;
+  width: 90vh;
+}
+
+.panel {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all 800ms ease-in;
+}
+
+.panel h3 {
+  position: absolute;
+  bottom: 0px;
+  opacity: 0;
+  color: #fff;
+  padding: 5px;
+  margin: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+}
+
+.progress-back-container {
+  width: 500px;
+  height: 100px;
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+.progress-container .progress {
+  background-color: aqua;
+  position: absolute;
+  top: 50%;
+  width: 0%;
+  left: 138px;
+  z-index: 1;
+  transform: translateY(50%);
+  height: 4px;
+  transition: 0.8s ease;
+}
+.progress-container .circle {
+  margin: 10px;
+  justify-content: space-between;
+  width: 30px;
+  border: 3px solid;
+  border-radius: 50%;
+  border-color: #e0e0e0;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-container .circle.active {
+  background-color: #3498db;
+}
+@media (max-width: 550px) {
+  .card-container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
